@@ -33,11 +33,11 @@ namespace FStudio.MatchEngine.Balls {
                     validTag = true;
                     break;
 
-	                case "ThrowInAction":
-	                    var fixedPos = position;
-	                    var sizeOfField = MatchManager.Current.SizeOfField;
-	                    if (position.z > sizeOfField.y / 2) {
-	                        position.z -= 0.1f;
+                    case "ThrowInAction":
+                        var fixedPos = position;
+                        var sizeOfField = MatchManager.Current.SizeOfField;
+                        if (position.z > sizeOfField.y / 2) {
+                            position.z -= 0.1f;
                     } else {
                         position.z += 0.1f;
                     }
