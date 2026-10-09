@@ -124,16 +124,24 @@ namespace FStudio.MatchEngine.Players.PlayerController {
             setBone(HumanBodyBones.RightFoot, footRShadow, footRMaterial);
         }
 
-        public void SetTrigger (PlayerAnimatorVariable animatorVariable) {
-            if (!gameObject.activeSelf) {
-                return;
-            }
+	        public void SetTrigger (PlayerAnimatorVariable animatorVariable) {
+	            if (!gameObject.activeSelf) {
+	                return;
+	            }
 
             Debug.Log($"[PlayerRenderer] SetTrigger () => {animatorVariable}", this);
-            animator.SetTrigger(animatorVariableHashes[animatorVariable.ToString ()]);
-        }
+	            animator.SetTrigger(animatorVariableHashes[animatorVariable.ToString ()]);
+	        }
 
-        public void SetBool (PlayerAnimatorVariable animatorVariable, bool value) {
+	        public void ResetTrigger (PlayerAnimatorVariable animatorVariable) {
+	            if (!gameObject.activeSelf) {
+	                return;
+	            }
+
+	            animator.ResetTrigger(animatorVariableHashes[animatorVariable.ToString ()]);
+	        }
+
+	        public void SetBool (PlayerAnimatorVariable animatorVariable, bool value) {
             if (!gameObject.activeSelf) {
                 return;
             }
